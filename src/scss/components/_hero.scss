@@ -1,0 +1,68 @@
+// -- Hero -- //
+
+$ns: '.hero-component';
+
+#{$ns} {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #{$ns}__text {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      transform: translateX(30%);
+    }
+
+    #{$ns}__name {
+      height: 282px;
+      width: 371px;
+      position: relative;
+
+      @include media($lg-desktop-up) {
+        height: 356px;
+        width: 471px;
+      }
+
+      &--text {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        font-size: 80px;
+        line-height: 90px;
+        font-family: $playfair;
+        text-align: right;
+        max-width: 225px;
+        color: $olive;
+
+        @include media($lg-desktop-up) {
+          font-size: 120px;
+          line-height: 130px;
+          max-width: 340px;
+        }
+      }
+
+      &--image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      &--button {
+        margin-top: 60px;
+        text-align: center;
+      }
+    }
+
+    #{$ns}__image {
+      img {
+        // height: 100vh;
+        width: 100%;
+        // max-width: auto;
+      }
+    }
+  }
+}
