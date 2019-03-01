@@ -33,14 +33,13 @@ $ns: '.hero-component';
         font-size: 80px;
         line-height: 90px;
         font-family: $playfair;
+        font-weight: bold;
         text-align: right;
-        max-width: 225px;
         color: $olive;
 
         @include media($lg-desktop-up) {
           font-size: 120px;
           line-height: 130px;
-          max-width: 340px;
         }
       }
 
