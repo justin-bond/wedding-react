@@ -29,7 +29,7 @@ class Hero extends Component {
           </div>
 
           <div className={`${ns}__image`}>
-            <img src="http://dummyimage.com/913x1080/4d494d/686a82.gif&text=913x1080" alt="Aileen & Justin" />
+            <img src="/assets/images/hero.jpg" alt="Aileen & Justin" />
             <div className={`${ns}__image--text`}>
               <div className={`${ns}__photo-cred`}>
                 <a href="https://www.keilifernando.com/" target="_blank" rel="noopener noreferrer">
