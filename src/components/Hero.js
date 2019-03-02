@@ -27,6 +27,16 @@ class Hero extends Component {
 
           <div className={`${ns}__image`}>
             <img src="http://dummyimage.com/913x1080/4d494d/686a82.gif&text=913x1080" alt="Aileen & Justin" />
+            <div className={`${ns}__image--text`}>
+              <div className={`${ns}__photo-cred`}>
+                <a href="https://www.keilifernando.com/" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19"><g id="noun_Camera_2194223" transform="translate(19 -2) rotate(90)"><path id="Path_14" data-name="Path 14" d="M3.5,19h16A1.5,1.5,0,0,0,21,17.5V7.5A1.5,1.5,0,0,0,19.5,6H17.035a.5.5,0,0,1-.416-.223L15.213,3.668A1.5,1.5,0,0,0,13.965,3H9.035a1.5,1.5,0,0,0-1.248.668L6.381,5.777A.5.5,0,0,1,5.965,6H3.5A1.5,1.5,0,0,0,2,7.5v10A1.5,1.5,0,0,0,3.5,19ZM3,7.5A.5.5,0,0,1,3.5,7H5.965a1.5,1.5,0,0,0,1.248-.668L8.619,4.223A.5.5,0,0,1,9.035,4h4.93a.5.5,0,0,1,.416.223l1.406,2.109A1.5,1.5,0,0,0,17.035,7H19.5a.5.5,0,0,1,.5.5v10a.5.5,0,0,1-.5.5H3.5a.5.5,0,0,1-.5-.5Z" fill="#fffdfc"/><path id="Path_15" data-name="Path 15" d="M11.5,16A4.5,4.5,0,1,0,7,11.5,4.5,4.5,0,0,0,11.5,16Zm0-8A3.5,3.5,0,1,1,8,11.5,3.5,3.5,0,0,1,11.5,8Z" fill="#fffdfc"/></g></svg> KEILI FERNANDO
+                </a>
+              </div>
+              <div className={`${ns}__date`}>
+                NOVEMBER 3RD, 2019
+              </div>
+            </div>
           </div>
         </div>
       </div>
