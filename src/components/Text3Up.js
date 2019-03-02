@@ -5,6 +5,45 @@ const ns = `text-3up-${nsBase}`
 const rootClassnames = `${nsBase} ${ns}`
 
 class Text3Up extends Component {
+  state = {
+    animate: false
+  }
+
+  componentDidMount() {
+    if (!this.props.animateIn) {
+      this.setState({
+        animate: true,
+      });
+    }
+
+    if(this.props.id && this.props.animateIn) {
+      window.addEventListener('scroll', this.handleScroll.bind(this))
+    }
+  }
+
+  componentWillUnmount() {
+    if(this.props.id && this.props.animateIn) {
+      window.removeEventListener('scroll', this.handleScroll.bind())
+    }
+  }
+
+  handleScroll() {
+    let _window = window
+    let offset = document.querySelector(`#${this.props.id}`).offsetTop
+    let heightDiff = parseInt(offset)
+    let scrollPos = _window.scrollY - 150
+    let innerHeight = _window.innerHeight
+
+    if (heightDiff < scrollPos+ innerHeight) {
+      this.setState({
+        animate: true,
+      });
+    } else {
+      this.setState({
+        animate: false,
+      });
+    }
+  }
 
   renderItem(item) {
     return (
@@ -21,7 +60,7 @@ class Text3Up extends Component {
 
   render() {
     return (
-      <div className={rootClassnames}>
+      <div id={this.props.id} className={rootClassnames} data-animate={this.state.animate}>
         <div className="container">
           <div className="row">
             <div className={`${ns}__wrapper`}>
