@@ -1,0 +1,75 @@
+// -- Image Text -- //
+
+$ns: '.image-text-component';
+
+#{$ns} {
+  margin: 60px 0;
+
+  @include media($tablet-up) {
+    margin: 120px 0;
+  }
+
+  &__wrapper {
+    max-width: 1056px;
+    margin: 0 auto;
+
+    @include media($tablet-up) {
+      display: flex;
+    }
+
+    &.reverse {
+      #{$ns}__image {
+        @include media($tablet-up) {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  &__item {
+    @include media($tablet-up) {
+      width: 50%;
+    }
+    
+    &--title {
+      font-family: $playfair;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 35px;
+      margin-bottom: 25px;
+    }
+
+    &--content {
+      line-height: 24px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 40px;
+
+    @include media($tablet-up) {
+      margin-bottom: 0;
+    }
+    
+    img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include media($tablet-up) {
+      padding: 50px;
+      text-align: left;
+    }
+
+    @include media($lg-desktop-up) {
+      padding: 100px;
+    }
+  }
+}

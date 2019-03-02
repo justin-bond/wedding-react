@@ -9,6 +9,10 @@ $ns: '.text-3up-component';
     margin: 120px 0;
   }
 
+  .container {
+    max-width: 1256px;
+  }
+
   &__item {
     text-align: center;
 
@@ -33,6 +37,7 @@ $ns: '.text-3up-component';
       font-weight: bold;
       font-size: 24px;
       line-height: 35px;
+      white-space: pre-line;
     }
   }
 }
