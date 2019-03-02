@@ -1,0 +1,38 @@
+// -- Text 3Up -- //
+
+$ns: '.text-3up-component';
+
+#{$ns} {
+  margin: 60px 0;
+
+  @include media($tablet-up) {
+    margin: 120px 0;
+  }
+
+  &__item {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 65px;
+      
+      @include media($tablet-up) {
+        margin-bottom: 0;
+      }
+    }
+
+    &--eyebrow {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 1px;
+      color: $olive;
+    }
+
+    &--text {
+      font-family: $playfair;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 35px;
+    }
+  }
+}
