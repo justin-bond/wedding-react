@@ -98,6 +98,10 @@ $ns: '.hero-component';
     }
 
     &--text {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 1px;
+
       @include media($desktop-up) {
         position: absolute;
         right: 60px;
@@ -118,7 +122,6 @@ $ns: '.hero-component';
 
   &__date {
     color: $white;
-    font-size: 14px;
 
     @include media($desktop-down) {
       position: absolute;
@@ -130,7 +133,6 @@ $ns: '.hero-component';
 
   &__photo-cred {
     color: $white;
-    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
