@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Hero from './Hero';
 import Text3Up from './Text3Up';
 import ImageText from './ImageText';
+import TextBlock from './TextBlock';
 
 class App extends Component {
   render() {
@@ -41,7 +42,8 @@ class App extends Component {
           title='What makes it complete'
           content='We truly believe that love and compromise makes a relationship grow. We make it work by not only telling each other “I love you” but, feeding each other donuts, Oreos, and pizza. '
         />
-
+        <TextBlock content='Stay tuned for more details.' trailingLine='true'/>
+        <div style={{height: '10px',backgroundColor: '#5D6750'}}></div>
       </div>
     );
   }

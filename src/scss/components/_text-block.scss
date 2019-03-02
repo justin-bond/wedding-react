@@ -1,0 +1,28 @@
+// -- Text Block -- //
+
+$ns: '.text-block-component';
+
+#{$ns} {
+  font-family: $playfair;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  margin: 60px 0;
+
+  @include media($tablet-up) {
+    margin: 120px 0;
+  }
+
+  .trailing-line {
+    &:after {
+      content: '';
+      height: 1px;
+      width: 33px;
+      background-color: $olive;
+      display: block;
+      margin: 0 auto;
+      margin-top: 28px;
+    }
+  }
+}
