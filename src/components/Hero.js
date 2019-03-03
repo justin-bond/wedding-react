@@ -8,11 +8,47 @@ const ns = `hero-${nsBase}`
 const rootClassnames = `${nsBase} ${ns}`
 
 class Hero extends Component {
+  state = {
+    heroImageAnimate: false,
+    heroTextAnimate: false,
+    heroImageTextAnimate: false,
+  }
+
+  componentDidMount() {
+    const self = this
+    setTimeout(function() {
+      self.setState({
+        heroImageAnimate: true
+      });
+    }, 500)
+  }
+
+  componentDidUpdate() {
+    const self = this
+
+    if (this.state.heroImageAnimate && !this.state.heroTextAnimate) {
+      setTimeout(function() {
+        self.setState({
+          heroTextAnimate: true
+        });
+      }, 500)
+    }
+
+    if (this.state.heroTextAnimate && !this.state.heroImageTextAnimate) {
+      setTimeout(function() {
+        self.setState({
+          heroImageTextAnimate: true
+        });
+      }, 500)
+    }
+  }
+
+
   render() {
     return (
       <div className={rootClassnames}>
         <div className={`${ns}__wrapper`}>
-          <div className={`${ns}__text`}>
+          <div className={`${ns}__text`} data-hero-animate={this.state.heroTextAnimate}>
             <div className={`${ns}__text--wrapper`}>
               <div className={`${ns}__name`}>
                 <div className={`${ns}__name--text`}>
@@ -28,9 +64,9 @@ class Hero extends Component {
             </div>
           </div>
 
-          <div className={`${ns}__image`}>
+          <div className={`${ns}__image`} data-hero-animate={this.state.heroImageAnimate}>
             <img src="/assets/images/hero.jpg" alt="Aileen & Justin" />
-            <div className={`${ns}__image--text`}>
+            <div className={`${ns}__image--text`} data-hero-animate={this.state.heroImageTextAnimate}>
               <div className={`${ns}__photo-cred`}>
                 <a href="https://www.keilifernando.com/" target="_blank" rel="noopener noreferrer">
                   <CameraSVG /> KEILI FERNANDO

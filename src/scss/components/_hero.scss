@@ -27,6 +27,16 @@ $ns: '.hero-component';
       display: flex;
       justify-content: center;
       transform: translateX(30%);
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(30%, 50px);
+    }
+
+    &[data-hero-animate="true"] {
+      transform: translate(30%, 0px);
+      visibility: visible;
+      opacity: 1;
     }
   }
 
@@ -85,6 +95,16 @@ $ns: '.hero-component';
 
   &__image {
     position: relative;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(50%, 0%);
+
+    &[data-hero-animate="true"] {
+      transform: translate(0%, 0%);
+      visibility: visible;
+      opacity: 1;
+    }
 
     img {
       // height: 100vh;
@@ -101,6 +121,14 @@ $ns: '.hero-component';
       font-size: 14px;
       line-height: 17px;
       letter-spacing: 1px;
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+
+      &[data-hero-animate="true"] {
+        visibility: visible;
+        opacity: 1;
+      }
 
       @include media($desktop-up) {
         position: absolute;
