@@ -58,9 +58,12 @@ class Hero extends Component {
                   <AmpersandSVG />
                 </div>
               </div>
-              <div className={`${ns}__name--button`}>
-                <button className="btn--primary-white">RSVP</button>
-              </div>
+              {
+                this.props.rsvp &&
+                <div className={`${ns}__name--button`}>
+                  <button className="btn--primary-white">RSVP</button>
+                </div>
+              }
             </div>
           </div>
 

@@ -14,12 +14,14 @@ $ns: '.hero-component';
 
   &__text {
     z-index: 1;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
     
     @include media($desktop-down) {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, 0%);
     }
 
     @include media($desktop-up) {
@@ -27,16 +29,18 @@ $ns: '.hero-component';
       display: flex;
       justify-content: center;
       transform: translateX(30%);
-      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-      opacity: 0;
       visibility: hidden;
       transform: translate(30%, 50px);
     }
 
     &[data-hero-animate="true"] {
-      transform: translate(30%, 0px);
+      transform: translate(-50%,-50%);
       visibility: visible;
       opacity: 1;
+
+      @include media($desktop-up) {
+        transform: translate(30%, 0px);
+      }
     }
   }
 
@@ -99,6 +103,21 @@ $ns: '.hero-component';
     opacity: 0;
     visibility: hidden;
     transform: translate(50%, 0%);
+    line-height: 0;
+
+    &:before {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.2);
+
+      @include media($desktop-up) {
+        display: none;
+      }
+    }
 
     &[data-hero-animate="true"] {
       transform: translate(0%, 0%);

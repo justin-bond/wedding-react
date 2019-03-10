@@ -5,10 +5,13 @@ import ImageText from './ImageText';
 import TextBlock from './TextBlock';
 
 class App extends Component {
+  state = {
+    rsvp: false
+  }
   render() {
     return (
       <div className="App home-page">
-        <Hero />
+        <Hero rsvp={this.state.rsvp}/>
         <Text3Up 
           id='www'
           animateIn='true'

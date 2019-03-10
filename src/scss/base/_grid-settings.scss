@@ -1,13 +1,14 @@
 // Breakpoints
-$screen-xs: em(480); 
-$screen-sm: em(770); 
-$screen-md: em(992); 
-$screen-lg: em(1200); 
+$screen-xs-min: 480;
+$screen-sm-min: 770; 
+$screen-md-min: 992; 
+$screen-lg-min: 1200;
 
-$mobile-up: min-width $screen-xs;
-$mobile-down: max-width $screen-xs;
-$tablet-up: min-width $screen-sm;
-$tablet-down: max-width $screen-sm;
-$desktop-up: min-width $screen-md;
-$desktop-down: max-width $screen-md;
-$lg-desktop-up: min-width $screen-lg;
+$mobile-up: min-width em($screen-xs-min);
+$mobile-down: max-width em($screen-xs-min - 1);
+$tablet-up: min-width em($screen-sm-min);
+$tablet-down: max-width em($screen-sm-min - 1);
+$desktop-up: min-width em($screen-md-min);
+$desktop-down: max-width em($screen-md-min - 1);
+$lg-desktop-up: min-width em($screen-lg-min);
+$lg-desktop-down: max-width em($screen-lg-min - 1);
