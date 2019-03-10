@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Waypoint } from 'react-waypoint'
 
 const nsBase = 'component'
 const ns = `text-3up-${nsBase}`
@@ -9,39 +10,17 @@ class Text3Up extends Component {
     animate: false
   }
 
-  componentDidMount() {
-    if (!this.props.animateIn) {
-      this.setState({
-        animate: true,
-      });
-    }
-
-    if(this.props.id && this.props.animateIn) {
-      window.addEventListener('scroll', this.handleScroll.bind(this))
-    }
+  _handleEnter(props) {
+    this.setState({
+      animate: true,
+    })
   }
 
-  componentWillUnmount() {
-    if(this.props.id && this.props.animateIn) {
-      window.removeEventListener('scroll', this.handleScroll.bind())
-    }
-  }
-
-  handleScroll() {
-    let _window = window
-    let offset = document.querySelector(`#${this.props.id}`).offsetTop
-    let heightDiff = parseInt(offset)
-    let scrollPos = _window.scrollY - 150
-    let innerHeight = _window.innerHeight
-
-    if (heightDiff < scrollPos+ innerHeight) {
-      this.setState({
-        animate: true,
-      });
-    } else {
+  _handleLeave(props) {
+    if (props.currentPosition === 'below') {
       this.setState({
         animate: false,
-      });
+      })
     }
   }
 
@@ -60,17 +39,19 @@ class Text3Up extends Component {
 
   render() {
     return (
-      <div id={this.props.id} className={rootClassnames} data-animate={this.state.animate}>
-        <div className="container">
-          <div className="row">
-            <div className={`${ns}__wrapper`}>
-              {this.props.items.map(this.renderItem)}
+      <Waypoint onEnter={this._handleEnter.bind(this)} onLeave={this._handleLeave.bind(this)} bottomOffset='100px'>
+        <div className={rootClassnames} data-animate={this.state.animate}>
+          <div className="container">
+            <div className="row">
+              <div className={`${ns}__wrapper`}>
+                {this.props.items.map(this.renderItem)}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Waypoint>
     )
   }
 }
 
-export default Text3Up;
+export default Text3Up

@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import Hero from './Hero';
-import Text3Up from './Text3Up';
-import ImageText from './ImageText';
-import TextBlock from './TextBlock';
+import React, { Component } from 'react'
+
+import Hero from './Hero'
+import Text3Up from './Text3Up'
+import ImageText from './ImageText'
+import TextBlock from './TextBlock'
 
 class App extends Component {
   state = {
@@ -59,8 +60,8 @@ class App extends Component {
         />
         <div style={{height: '10px',backgroundColor: '#5D6750'}}></div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

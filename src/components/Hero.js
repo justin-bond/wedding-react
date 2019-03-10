@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import { AmpersandSVG } from '../svgIcons';
-import { CameraSVG } from '../svgIcons';
+import { AmpersandSVG } from '../svgIcons'
+import { CameraSVG } from '../svgIcons'
 
 const nsBase = 'component'
 const ns = `hero-${nsBase}`
@@ -19,7 +19,7 @@ class Hero extends Component {
     setTimeout(function() {
       self.setState({
         heroImageAnimate: true
-      });
+      })
     }, 500)
   }
 
@@ -30,7 +30,7 @@ class Hero extends Component {
       setTimeout(function() {
         self.setState({
           heroTextAnimate: true
-        });
+        })
       }, 500)
     }
 
@@ -38,7 +38,7 @@ class Hero extends Component {
       setTimeout(function() {
         self.setState({
           heroImageTextAnimate: true
-        });
+        })
       }, 500)
     }
   }
@@ -82,8 +82,8 @@ class Hero extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Hero;
+export default Hero
