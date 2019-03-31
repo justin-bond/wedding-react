@@ -71,7 +71,7 @@ class Hero extends Component {
             <img src="/assets/images/aj_wedding_image_hero.jpg" alt="Aileen & Justin" />
             <div className={`${ns}__image--text`} data-hero-animate={this.state.heroImageTextAnimate}>
               <div className={`${ns}__photo-cred`}>
-                <a href="https://www.keilifernando.com/" target="_blank" rel="noopener noreferrer">
+                <a href="http://Klifproductions.com/" target="_blank" rel="noopener noreferrer">
                   <CameraSVG /> KEILI FERNANDO
                 </a>
               </div>

@@ -81,7 +81,9 @@ $ns: '.image-text-component';
     }
     
     img {
+      border-radius: 10px;
       width: 100%;
+      box-shadow: 0 25px 60px 0 rgba(0,0,0,0.10);
     }
   }
 

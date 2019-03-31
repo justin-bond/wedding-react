@@ -139,6 +139,11 @@ $ns: '.hero-component';
 
     img {
       width: 100%;
+      box-shadow: 0 25px 60px 0 rgba(0,0,0,0.10);
+      
+      @include media($desktop-up) {
+        border-radius: 10px;
+      }
 
       @include media($desktop-down) {
         height: 85vh;

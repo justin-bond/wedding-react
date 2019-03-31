@@ -23,7 +23,7 @@ class App extends Component {
             },
             {
               eyebrow: 'WHERE',
-              text: 'The Nursery by\nSouthWinds in Irvine CA'
+              text: 'The Nursery by\nSouthWinds in Irvine, CA'
             },
             {
               eyebrow: 'WHEN',
