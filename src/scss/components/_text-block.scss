@@ -17,8 +17,8 @@ $ns: '.text-block-component';
   .trailing-line {
     &:after {
       content: '';
-      height: 1px;
-      width: 33px;
+      height: 4px;
+      width: 95px;
       background-color: $olive;
       display: block;
       margin: 0 auto;

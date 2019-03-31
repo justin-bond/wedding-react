@@ -26,10 +26,16 @@ class ImageText extends Component {
 
   render() {
     const reverseClass = this.props.reverse ? 'reverse' : ''
+    const themeClass = this.props.theme ? this.props.theme : ''
 
     return (
       <Waypoint onEnter={this._handleEnter.bind(this)} onLeave={this._handleLeave.bind(this)} bottomOffset='100px'>
-        <div className={rootClassnames} data-animate={this.state.animate}>
+        <div className={`${rootClassnames} ${themeClass}`} data-animate={this.state.animate}>
+          {this.props.floatingText &&
+            <div className={`${ns}__floating-text`} data-floating-text={this.props.floatingText}>
+              {this.props.floatingText}
+            </div>
+          }
           <div className="container">
             <div className={`${ns}__wrapper ${reverseClass}`}>
               <div className={`${ns}__item ${ns}__image`}>
@@ -37,12 +43,16 @@ class ImageText extends Component {
               </div>
               <div className={`${ns}__item ${ns}__text`}>
                 <div className={`${ns}__text--wrapper`}>
-                  <div className={`${ns}__item--title`}>
-                    {this.props.title}
-                  </div>
-                  <div className={`${ns}__item--content`}>
-                    {this.props.content}
-                  </div>
+                  {this.props.title &&
+                    <div className={`${ns}__item--title`}>
+                      {this.props.title}
+                    </div>
+                  }
+                  {this.props.content &&
+                    <div className={`${ns}__item--content`}>
+                      {this.props.content}
+                    </div>
+                  }
                 </div>
               </div>
             </div>

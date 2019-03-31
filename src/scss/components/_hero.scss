@@ -4,11 +4,13 @@ $ns: '.hero-component';
 
 #{$ns} {
   &__wrapper {
+    position: relative;
 
-   @include media($desktop-up) {
+    @include media($desktop-up) {
+      margin-top: 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
     }
   }
 
@@ -25,21 +27,22 @@ $ns: '.hero-component';
     }
 
     @include media($desktop-up) {
-      flex-grow: 1;
+      // flex-grow: 1;
+      width: 50%;
+      max-width: 700px;
       display: flex;
       justify-content: center;
       transform: translateX(30%);
       visibility: hidden;
-      transform: translate(30%, 50px);
     }
 
     &[data-hero-animate="true"] {
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       visibility: visible;
       opacity: 1;
 
       @include media($desktop-up) {
-        transform: translate(30%, 0px);
+        transform: translateX(30%);
       }
     }
   }
@@ -80,14 +83,18 @@ $ns: '.hero-component';
     }
 
     &--image {
-      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%,-50%);
+      opacity: 0.3;
 
       @include media($desktop-up) {
-        display: block;
-        position: absolute;
         top: 0;
         left: 0;
-        z-index: 1;
+        transform: unset;
+        opacity: 1;
       }
     }
 
@@ -104,6 +111,11 @@ $ns: '.hero-component';
     visibility: hidden;
     transform: translate(50%, 0%);
     line-height: 0;
+
+    @include media($desktop-up) {
+      max-width: 700px;
+      width: 50%;
+    }
 
     &:before {
       content:'';
@@ -126,12 +138,10 @@ $ns: '.hero-component';
     }
 
     img {
-      // height: 100vh;
       width: 100%;
-      // max-width: auto;
 
       @include media($desktop-down) {
-        height: 100vh;
+        height: 85vh;
         object-fit: cover;
       }
     }
@@ -169,6 +179,7 @@ $ns: '.hero-component';
 
   &__date {
     color: $white;
+    font-weight: bold;
 
     @include media($desktop-down) {
       position: absolute;
@@ -180,6 +191,7 @@ $ns: '.hero-component';
 
   &__photo-cred {
     color: $white;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,22 +200,16 @@ $ns: '.hero-component';
       position: absolute;
       bottom: 40px;
       width: 100%;
-      // left: 50%;
-      // transform: translateX(-50%);
     }
 
     &:after {
-      content: '';
-      background-color: $white;
-      height: 1px;
-      width: 100px;
-      margin-left: 22px;
-
       @include media($desktop-up) {
+        content: '';
         height: 100px;
         width: 1px;
         margin-top: 22px;
         margin-left: 0;
+        background-color: $white;
       }
     }
 

@@ -68,7 +68,7 @@ class Hero extends Component {
           </div>
 
           <div className={`${ns}__image`} data-hero-animate={this.state.heroImageAnimate}>
-            <img src="/assets/images/hero.jpg" alt="Aileen & Justin" />
+            <img src="/assets/images/aj_wedding_image_hero.jpg" alt="Aileen & Justin" />
             <div className={`${ns}__image--text`} data-hero-animate={this.state.heroImageTextAnimate}>
               <div className={`${ns}__photo-cred`}>
                 <a href="https://www.keilifernando.com/" target="_blank" rel="noopener noreferrer">

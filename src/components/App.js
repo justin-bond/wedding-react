@@ -32,25 +32,25 @@ class App extends Component {
           ]}
         />
         <ImageText 
-          id='donuts'
+          theme='us-beach'
           animateIn='true'
           image={{
-            imageSrc: 'http://dummyimage.com/528x543/4d494d/686a82.gif&text=528x543',
+            imageSrc: '/assets/images/aj_wedding_image_1.jpg',
             imageAlt: 'Donuts!'
           }}
-          title='Making it work'
-          content='We truly believe that love and compromise makes a relationship grow. We make it work by not only telling each other “I love you” but, feeding each other donuts, Oreos, and pizza.'
+          content='“Love is a promise; love is a souvenir, once given never forgotten, never let it disappear.”'
         />
         <ImageText
-          id='taiga'
+          theme='us-la'
           animateIn='true'
           reverse='true'
           image={{
-            imageSrc: 'http://dummyimage.com/528x543/4d494d/686a82.gif&text=528x543',
+            imageSrc: '/assets/images/aj_wedding_image_2.jpg',
             imageAlt: 'with taiga'
           }}
-          title='What makes it complete'
-          content='We truly believe that love and compromise makes a relationship grow. We make it work by not only telling each other “I love you” but, feeding each other donuts, Oreos, and pizza. '
+          title='I love you'
+          content='Life is all about living through the good times and and the bad times. We go through each journey, one step at a time. Life shouldn’t be taken too seriously but instead, live in the moment.'
+          floatingText='Nov 03'
         />
         <TextBlock 
           id='stayTuned'
