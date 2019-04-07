@@ -4,6 +4,7 @@ import Hero from './Hero'
 import Text3Up from './Text3Up'
 import ImageText from './ImageText'
 import TextBlock from './TextBlock'
+import Rsvp from './Rsvp'
 
 class App extends Component {
   state = {
@@ -52,6 +53,10 @@ class App extends Component {
           content='Life is all about living through the good times and and the bad times. We go through each journey, one step at a time. Life shouldn’t be taken too seriously but instead, live in the moment.'
           floatingText='Nov 03'
         />
+        {
+          this.state.rsvp &&
+            <Rsvp />
+        }
         <TextBlock 
           id='stayTuned'
           animateIn='true'

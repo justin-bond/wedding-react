@@ -1,0 +1,84 @@
+// -- RSVP -- //
+
+$ns: '.rsvp-component';
+
+#{$ns} {
+  margin: 60px auto;
+  width: 90%;
+
+  @include media($tablet-up) {
+    margin: 120px auto;
+  }
+
+  &--wrapper {
+    position: relative;
+  }
+
+  &__form {
+
+    &--container {
+      width: 76%;
+      box-shadow: 0 13px 35px rgba(0, 0, 0, 0.1 );
+      padding: 120px;
+    }
+
+    &--wrapper {
+      width: 48%;
+    }
+  }
+
+  &__text {
+    @include media($desktop-up) {
+      height: 282px;
+      width: 371px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include media($lg-desktop-up) {
+      height: 356px;
+      width: 471px;
+    }
+
+    &--copy {
+      font-size: 80px;
+      line-height: 90px;
+      font-family: $playfair;
+      font-weight: bold;
+      // text-align: center;
+      color: $white;
+
+      @include media($desktop-up) {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        // text-align: right;
+        color: $olive;
+      }
+
+      @include media($lg-desktop-up) {
+        font-size: 120px;
+        line-height: 130px;
+      }
+    }
+
+    &--image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%,-50%);
+      opacity: 0.3;
+
+      @include media($desktop-up) {
+        top: 0;
+        left: 20px;
+        transform: unset;
+        opacity: 1;
+      }
+    }
+  }
+}
