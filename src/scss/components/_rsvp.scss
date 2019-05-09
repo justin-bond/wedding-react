@@ -10,6 +10,18 @@ $ns: '.rsvp-component';
     margin: 120px auto;
   }
 
+  label {
+    font-size: 14px;
+    font-weight: 200;
+    color: $olive;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  input {
+    margin-bottom: 30px;
+  }
+
   &--wrapper {
     position: relative;
   }
@@ -19,11 +31,31 @@ $ns: '.rsvp-component';
     &--container {
       width: 76%;
       box-shadow: 0 13px 35px rgba(0, 0, 0, 0.1 );
-      padding: 120px;
+      padding: 60px;
+
+      @include media($tablet-up) {
+        padding: 120px;
+      }
     }
 
     &--wrapper {
-      width: 48%;
+      max-width: 315px;
+      @include media($lg-desktop-up) {
+        width: 48%;
+      }
+    }
+
+    &-title {
+      font-family: "Playfair Display", serif;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 35px;
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      line-height: 24px;
+      margin-bottom: 30px;
     }
   }
 

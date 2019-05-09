@@ -9,7 +9,16 @@ const rootClassnames = `${nsBase} ${ns}`
 
 class Rsvp extends Component {
   state = {
-    animate: false
+    animate: false,
+    hideCodeForm: false,
+    hideRsvpForm: true,
+    formCode: '',
+    formCodeError: '',
+    formGuestName: '',
+    formEmail: '',
+    formYesNo: '',
+    formPartyNumber: '',
+    formChildrenNuber: ''
   }
 
   _handleEnter(props) {
@@ -26,18 +35,71 @@ class Rsvp extends Component {
     }
   }
 
-  renderForm() {
+  handleChange(e) {
+    const state = this.state;
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  }
+
+  renderCodeForm() {
     return (
-      <form className={`${ns}__form`} action="#" method="post">
+      <form className={`${ns}__code-form`} onSubmit={(e) => this.submitCodeForm(e)}>
+        <div className={`${ns}__form-title`}>Enter your code</div>
+        <div className={`${ns}__form-text`}>Enter the code you have received from your RSVP invitation below.</div>
         <div>
-          <label for="name">Text Input:</label>
-          <input type="text" name="name" id="name" value="" tabindex="1" />
+          <label htmlFor="code">Wedding code</label>
+          <input onChange={(e) => this.handleChange(e)} type="text" name="formCode" id="code" required/>
+          <span className={`${ns}__error`}>{this.state.formCodeError}</span>
         </div>              
         <div>
-          <input type="submit" value="Submit" />
+          <button type="submit" className="btn--primary">CONFIRM</button>
         </div>
       </form>
     )
+  }
+
+  submitCodeForm(event) {
+    event.preventDefault();
+
+    if (this.state.formCode === 'letsparty') {
+      this.setState({
+        formCodeError: '',
+        hideCodeForm: true,
+        hideRsvpForm: false
+      });
+    } else {
+      this.setState({
+        formCodeError: 'Please enter a correct code'
+      });
+    }
+  }
+
+  renderRsvpForm() {
+    return (
+      <form className={`${ns}__rsvp-form`} onSubmit={(e) => this.submitRsvpForm(e)}>
+        <div>
+          <label htmlFor="name">Guest Full Name</label>
+          <input onChange={(e) => this.handleChange(e)} type="text" name="formName" id="name" required/>
+        </div>
+        <div>
+          <label htmlFor="email">Email Address</label>
+          <input onChange={(e) => this.handleChange(e)} type="text" name="formEmail" id="email" required/>
+        </div>
+        <div>
+          <button type="submit" className="btn--primary">CONFIRM</button>
+        </div>
+      </form>
+    )
+  }
+
+  submitRsvpForm(event) {
+    event.preventDefault();
+    
+    const data = {
+      code: this.state.formCode
+    };
+    console.log(data);
+
   }
 
   render() {
@@ -47,7 +109,14 @@ class Rsvp extends Component {
           <div className={`${ns}__wrapper`}>
             <div className={`${ns}__form--container`}>
               <div className={`${ns}__form--wrapper`}>
-                {this.renderForm()}
+                {
+                  this.state.hideRsvpForm &&
+                  this.renderCodeForm()
+                }
+                {
+                  this.state.hideCodeForm &&
+                  this.renderRsvpForm()
+                }
               </div>
             </div>
             <div className={`${ns}__text`}>
