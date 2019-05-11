@@ -10,14 +10,14 @@ const rootClassnames = `${nsBase} ${ns}`
 class Rsvp extends Component {
   state = {
     animate: false,
-    hideCodeForm: false,
-    hideRsvpForm: true,
+    hideCodeForm: true,
+    hideRsvpForm: false,
     formCode: '',
     formCodeError: '',
     formGuestName: '',
     formEmail: '',
-    formYesNo: '',
-    formPartyNumber: '',
+    formYesNo: 'yes',
+    formPartyNumber: 'lime',
     formChildrenNuber: ''
   }
 
@@ -77,15 +77,49 @@ class Rsvp extends Component {
   renderRsvpForm() {
     return (
       <form className={`${ns}__rsvp-form`} onSubmit={(e) => this.submitRsvpForm(e)}>
-        <div>
+        <div className={`${ns}__form-input-wrapper`}>
           <label htmlFor="name">Guest Full Name</label>
           <input onChange={(e) => this.handleChange(e)} type="text" name="formName" id="name" required/>
         </div>
-        <div>
+        <div className={`${ns}__form-input-wrapper`}>
           <label htmlFor="email">Email Address</label>
-          <input onChange={(e) => this.handleChange(e)} type="text" name="formEmail" id="email" required/>
+          <input onChange={(e) => this.handleChange(e)} type="email" name="formEmail" id="email" required/>
         </div>
-        <div>
+        <div className={`${ns}__form-radio-wrapper`}>
+          <div>
+            <input
+              type="radio"
+              name="formYesNo"
+              id="yes"
+              value="yes"
+              checked={this.state.formYesNo === "yes"}
+              onChange={(e) => this.handleChange(e)}
+            />
+            <label htmlFor="yes">Yes, I’m down to party</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="formYesNo"
+              id="no"
+              value="no"
+              checked={this.state.formYesNo === "no"}
+              onChange={(e) => this.handleChange(e)}
+            />
+            <label htmlFor="no">Sorry, I’m going to miss it</label>
+          </div>
+        </div>
+        <div className={`${ns}__form-select-wrapper`}>
+          <label htmlFor="guests">How many in your party</label>
+          <div className="select-wrapper">
+            <select value={this.state.formPartyNumber} onChange={(e) => this.handleChange(e)} id="guests">
+              <option value="1">Myself</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+            </select>
+          </div>
+        </div>
+        <div className={`${ns}__form-submit-wrapper`}>
           <button type="submit" className="btn--primary">CONFIRM</button>
         </div>
       </form>
@@ -98,8 +132,6 @@ class Rsvp extends Component {
     const data = {
       code: this.state.formCode
     };
-    console.log(data);
-
   }
 
   render() {

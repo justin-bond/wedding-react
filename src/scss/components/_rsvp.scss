@@ -20,6 +20,10 @@ $ns: '.rsvp-component';
 
   input {
     margin-bottom: 30px;
+
+    // &[type=radio] + label {
+    //   display: inline-block;
+    // }
   }
 
   &--wrapper {
