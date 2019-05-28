@@ -10,15 +10,15 @@ const rootClassnames = `${nsBase} ${ns}`
 class Rsvp extends Component {
   state = {
     animate: false,
-    hideCodeForm: true,
-    hideRsvpForm: false,
+    hideCodeForm: false,
+    hideRsvpForm: true,
     formCode: '',
     formCodeError: '',
     formGuestName: '',
     formEmail: '',
     formYesNo: 'yes',
-    formPartyNumber: 'lime',
-    formChildrenNuber: ''
+    formPartyNumber: '1',
+    formPartyNames: ''
   }
 
   _handleEnter(props) {
@@ -79,7 +79,7 @@ class Rsvp extends Component {
       <form className={`${ns}__rsvp-form`} onSubmit={(e) => this.submitRsvpForm(e)}>
         <div className={`${ns}__form-input-wrapper`}>
           <label htmlFor="name">Guest Full Name</label>
-          <input onChange={(e) => this.handleChange(e)} type="text" name="formName" id="name" required/>
+          <input onChange={(e) => this.handleChange(e)} type="text" name="formGuestName" id="name" required/>
         </div>
         <div className={`${ns}__form-input-wrapper`}>
           <label htmlFor="email">Email Address</label>
@@ -109,16 +109,31 @@ class Rsvp extends Component {
             <label htmlFor="no">Sorry, I’m going to miss it</label>
           </div>
         </div>
-        <div className={`${ns}__form-select-wrapper`}>
-          <label htmlFor="guests">How many in your party</label>
-          <div className="select-wrapper">
-            <select value={this.state.formPartyNumber} onChange={(e) => this.handleChange(e)} id="guests">
-              <option value="1">Myself</option>
-              <option value="2">2 People</option>
-              <option value="3">3 People</option>
-            </select>
+        {
+          this.state.formYesNo === "yes" &&
+          <div className={`${ns}__form-select-wrapper`}>
+            <label htmlFor="guests">How many in your party</label>
+            <div className="select-wrapper">
+              <select
+                name="formPartyNumber"
+                id="guests"
+                value={this.state.formPartyNumber}
+                onChange={(e) => this.handleChange(e)}
+              >
+                <option value="1">Myself</option>
+                <option value="2">Myself + 1</option>
+                <option value="3+">Myself + 1 and/or kid(s)</option>
+              </select>
+            </div>
           </div>
-        </div>
+        }
+        {
+          this.state.formYesNo === "yes" && this.state.formPartyNumber !== '1' &&
+          <div className={`${ns}__form-input-wrapper`}>
+            <label htmlFor="names">Name(s) of who’s in your party</label>
+            <textarea onChange={(e) => this.handleChange(e)} type="textarea" name="formPartyNames" id="names" required/>
+          </div>
+        }
         <div className={`${ns}__form-submit-wrapper`}>
           <button type="submit" className="btn--primary">CONFIRM</button>
         </div>
@@ -130,8 +145,23 @@ class Rsvp extends Component {
     event.preventDefault();
     
     const data = {
-      code: this.state.formCode
+      formGuestName: this.state.formGuestName,
+      formEmail: this.state.formEmail,
+      formYesNo: this.state.formYesNo,
+      formPartyNumber: this.state.formPartyNumber,
+      formPartyNames: this.state.formPartyNames,
     };
+    console.log(data);
+
+    if (data.formYesNo === 'yes') {
+      console.log('lets party!')
+    } else {
+      console.log('boooo!')
+    }
+
+    this.setState({
+      hideRsvpForm: true
+    });
   }
 
   render() {
@@ -142,12 +172,30 @@ class Rsvp extends Component {
             <div className={`${ns}__form--container`}>
               <div className={`${ns}__form--wrapper`}>
                 {
-                  this.state.hideRsvpForm &&
+                  !this.state.hideCodeForm &&
                   this.renderCodeForm()
                 }
                 {
-                  this.state.hideCodeForm &&
+                  !this.state.hideRsvpForm &&
                   this.renderRsvpForm()
+                }
+                {
+                  this.state.hideRsvpForm &&
+                  this.state.hideCodeForm &&
+                  this.state.formYesNo === 'yes' &&
+                  <div className={`${ns}__form--response`}>
+                    <p><strong>Your RSVP has been confirmed!</strong></p>
+                    <p>See you there and be ready to party!</p>
+                  </div>
+                }
+                {
+                  this.state.hideRsvpForm &&
+                  this.state.hideCodeForm &&
+                  this.state.formYesNo === 'no' &&
+                  <div className={`${ns}__form--response`}>
+                    <p><strong>Bummer! We’re sorry to hear that.</strong></p>
+                    <p>Maybe, you can come to our baby shower in the future.</p>
+                  </div>
                 }
               </div>
             </div>
