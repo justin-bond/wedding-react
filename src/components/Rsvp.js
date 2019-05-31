@@ -18,7 +18,8 @@ class Rsvp extends Component {
     formEmail: '',
     formYesNo: 'yes',
     formPartyNumber: '1',
-    formPartyNames: ''
+    formPartyNames: '',
+    formRsvpResponse: 'pending'
   }
 
   _handleEnter(props) {
@@ -153,15 +154,37 @@ class Rsvp extends Component {
     };
     console.log(data);
 
-    if (data.formYesNo === 'yes') {
-      console.log('lets party!')
-    } else {
-      console.log('boooo!')
-    }
+    fetch("https://www.justin-bond.com/sendmail/wedding-rsvp-end-point.php", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+    }).then(
+      res => res.json()
+    )
+    .catch(
+      error => console.error('Error:', error)
+    )
+    .then(
+      response => {
+        console.log('Success:', response);
+        if (response['status'] === 1){
+          this.setState({
+            formRsvpResponse: 'accepted',
+            hideRsvpForm: true
+          });
+        } else {
+          this.setState({formRsvpResponse: response['error']});
+        }
+      }
+    );
 
-    this.setState({
-      hideRsvpForm: true
-    });
+    // if (data.formYesNo === 'yes') {
+    //   console.log('lets party!')
+    // } else {
+    //   console.log('boooo!')
+    // }
   }
 
   render() {
@@ -180,11 +203,18 @@ class Rsvp extends Component {
                   this.renderRsvpForm()
                 }
                 {
+                  this.state.formRsvpResponse !== 'pending' &&
+                  this.state.formRsvpResponse !== 'accepted' &&
+                  <div>
+                    {this.state.formRsvpResponse}
+                  </div>
+                }
+                {
                   this.state.hideRsvpForm &&
                   this.state.hideCodeForm &&
                   this.state.formYesNo === 'yes' &&
                   <div className={`${ns}__form--response`}>
-                    <p><strong>Your RSVP has been confirmed!</strong></p>
+                    <p><strong>Your RSVP has been confirmed, {this.state.formGuestName}!</strong></p>
                     <p>See you there and be ready to party!</p>
                   </div>
                 }
@@ -193,7 +223,7 @@ class Rsvp extends Component {
                   this.state.hideCodeForm &&
                   this.state.formYesNo === 'no' &&
                   <div className={`${ns}__form--response`}>
-                    <p><strong>Bummer! We’re sorry to hear that.</strong></p>
+                    <p><strong>Bummer! We’re sorry to hear that, {this.state.formGuestName}.</strong></p>
                     <p>Maybe, you can come to our baby shower in the future.</p>
                   </div>
                 }
