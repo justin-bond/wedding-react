@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { animateScroll as scroll } from 'react-scroll';
 
 import { AmpersandSVG } from '../svgIcons'
 import { CameraSVG } from '../svgIcons'
@@ -43,6 +44,12 @@ class Hero extends Component {
     }
   }
 
+  scrollTo(anchor, offset) {
+    if (document.getElementById(anchor) != null) {
+      const anchorPosition = document.getElementById(anchor).getBoundingClientRect();
+      scroll.scrollTo((anchorPosition.top + window.scrollY) - (offset ? offset : 0));
+    }
+  }
 
   render() {
     return (
@@ -60,7 +67,7 @@ class Hero extends Component {
               </div>
               {
                 this.props.rsvp &&
-                <div className={`${ns}__name--button`}>
+                <div className={`${ns}__name--button`} onClick={()=>this.scrollTo('rsvp', 75)}>
                   <button className="btn--primary-white">RSVP</button>
                 </div>
               }

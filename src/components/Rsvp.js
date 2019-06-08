@@ -152,7 +152,7 @@ class Rsvp extends Component {
       formPartyNumber: this.state.formPartyNumber,
       formPartyNames: this.state.formPartyNames,
     };
-    console.log(data);
+    // console.log(data);
 
     fetch("https://www.justin-bond.com/sendmail/wedding-rsvp-end-point.php", {
       method: "POST",
@@ -190,8 +190,16 @@ class Rsvp extends Component {
   render() {
     return (
       <Waypoint onEnter={this._handleEnter.bind(this)} onLeave={this._handleLeave.bind(this)} bottomOffset='100px'>
-        <div className={rootClassnames} data-animate={this.state.animate}>
+        <div id="rsvp" className={rootClassnames} data-animate={this.state.animate}>
           <div className={`${ns}__wrapper`}>
+            <div className={`${ns}__text`}>
+              <div className={`${ns}__text--copy`}>
+                rsvp<br />celebrate
+              </div>
+              <div className={`${ns}__text--image`}>
+                <AmpersandSVG />
+              </div>
+            </div>
             <div className={`${ns}__form--container`}>
               <div className={`${ns}__form--wrapper`}>
                 {
@@ -227,14 +235,6 @@ class Rsvp extends Component {
                     <p>Maybe, you can come to our baby shower in the future.</p>
                   </div>
                 }
-              </div>
-            </div>
-            <div className={`${ns}__text`}>
-              <div className={`${ns}__text--copy`}>
-                rsvp<br />celebrate
-              </div>
-              <div className={`${ns}__text--image`}>
-                <AmpersandSVG />
               </div>
             </div>
           </div>

@@ -25,12 +25,12 @@ $ns: '.rsvp-component';
   &__form {
 
     &--container {
-      width: 76%;
       box-shadow: 0 13px 35px rgba(0, 0, 0, 0.1 );
       padding: 60px;
 
-      @include media($tablet-up) {
+      @include media($desktop-up) {
         padding: 120px;
+        width: 76%;
       }
     }
 
@@ -69,6 +69,13 @@ $ns: '.rsvp-component';
   }
 
   &__text {
+    position: relative;
+    margin-bottom: 50px;
+
+    @include media($tablet-up) {
+      margin-bottom: 100px;
+    }
+
     @include media($desktop-up) {
       height: 282px;
       width: 371px;
@@ -76,6 +83,7 @@ $ns: '.rsvp-component';
       right: 0;
       top: 50%;
       transform: translateY(-50%);
+      margin-bottom: 0;
     }
 
     @include media($lg-desktop-up) {
@@ -88,16 +96,15 @@ $ns: '.rsvp-component';
       line-height: 90px;
       font-family: $playfair;
       font-weight: bold;
-      // text-align: center;
-      color: $white;
+      text-align: center;
+      color: $olive;
 
       @include media($desktop-up) {
         position: absolute;
         right: 0;
         bottom: 0;
         z-index: 2;
-        // text-align: right;
-        color: $olive;
+        text-align: left;
       }
 
       @include media($lg-desktop-up) {

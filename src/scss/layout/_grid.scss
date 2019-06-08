@@ -7,8 +7,8 @@
   margin-right: auto;
   margin-left: auto;
   @include media($tablet-up){
-    padding-right: 23px;
-    padding-left: 23px;
+    padding-right: 24px;
+    padding-left: 24px;
   }
 }
 .container {
@@ -18,8 +18,8 @@
   padding-left: 20px;
   padding-right: 20px;
   @include media($tablet-up){
-  	padding-left: 23px;
-  	padding-right: 23px;
+  	padding-left: 24px;
+  	padding-right: 24px;
   }
 }
 .row {
