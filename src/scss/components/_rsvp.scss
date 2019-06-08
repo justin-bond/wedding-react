@@ -70,20 +70,21 @@ $ns: '.rsvp-component';
 
   &__text {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 75px;
 
     @include media($tablet-up) {
-      margin-bottom: 100px;
-    }
-
-    @include media($desktop-up) {
-      height: 282px;
-      width: 371px;
+      height: 190px;
+      width: 48%;
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
       margin-bottom: 0;
+    }
+
+    @include media($desktop-up) {
+      height: 282px;
+      width: 371px;
     }
 
     @include media($lg-desktop-up) {
@@ -92,8 +93,8 @@ $ns: '.rsvp-component';
     }
 
     &--copy {
-      font-size: 80px;
-      line-height: 90px;
+      font-size: 70px;
+      line-height: 80px;
       font-family: $playfair;
       font-weight: bold;
       text-align: center;
@@ -105,6 +106,8 @@ $ns: '.rsvp-component';
         bottom: 0;
         z-index: 2;
         text-align: left;
+        font-size: 85px;
+        line-height: 95px;
       }
 
       @include media($lg-desktop-up) {

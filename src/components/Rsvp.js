@@ -48,8 +48,10 @@ class Rsvp extends Component {
         <div className={`${ns}__form-title`}>Enter your code</div>
         <div className={`${ns}__form-text`}>Enter the code you have received from your RSVP invitation below.</div>
         <div>
-          <label htmlFor="code">Wedding code</label>
-          <input onChange={(e) => this.handleChange(e)} type="text" name="formCode" id="code" required/>
+          <div className={`${ns}__form-input-wrapper`}>
+            <label htmlFor="code">Wedding code</label>
+            <input onChange={(e) => this.handleChange(e)} type="text" name="formCode" id="code" required/>
+          </div>
           <span className={`${ns}__error`}>{this.state.formCodeError}</span>
         </div>              
         <div>
