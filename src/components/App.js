@@ -8,7 +8,7 @@ import Rsvp from './Rsvp'
 
 class App extends Component {
   state = {
-    rsvp: false
+    rsvp: true
   }
   render() {
     return (
@@ -24,11 +24,11 @@ class App extends Component {
             },
             {
               eyebrow: 'WHERE',
-              text: 'The Nursery by\nSouthWinds in Irvine, CA'
+              text: 'VENUE by\n Three Petals in Irvine, CA'
             },
             {
               eyebrow: 'WHEN',
-              text: 'November 3rd, 2019\n5pm - 10pm'
+              text: 'November 3rd, 2019\n4pm - 10pm'
             }
           ]}
         />
@@ -37,7 +37,7 @@ class App extends Component {
           animateIn='true'
           image={{
             imageSrc: '/assets/images/aj_wedding_image_1.jpg',
-            imageAlt: 'Donuts!'
+            imageAlt: 'us1'
           }}
           content='“Love is a promise; love is a souvenir, once given never forgotten, never let it disappear.”'
         />
@@ -47,7 +47,7 @@ class App extends Component {
           reverse='true'
           image={{
             imageSrc: '/assets/images/aj_wedding_image_2.jpg',
-            imageAlt: 'with taiga'
+            imageAlt: 'us2'
           }}
           title='I love you'
           content='Life is all about living through the good times and and the bad times. We go through each journey, one step at a time. Life shouldn’t be taken too seriously but instead, live in the moment.'
@@ -55,7 +55,7 @@ class App extends Component {
         />
         {
           this.state.rsvp &&
-            <Rsvp />
+          <Rsvp />
         }
         <TextBlock 
           id='stayTuned'
