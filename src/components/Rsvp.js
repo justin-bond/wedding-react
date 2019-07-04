@@ -64,7 +64,7 @@ class Rsvp extends Component {
   submitCodeForm(event) {
     event.preventDefault();
 
-    if (this.state.formCode === 'letsparty') {
+    if (this.state.formCode.toLowerCase() === 'letsparty') {
       this.setState({
         formCodeError: '',
         hideCodeForm: true,
@@ -156,7 +156,7 @@ class Rsvp extends Component {
     };
     // console.log(data);
 
-    fetch("https://www.justin-bond.com/sendmail/wedding-rsvp-end-point.php", {
+    fetch("https://aileen.justin-bond.com/_scripts/wedding-rsvp-end-point.php", {
       method: "POST",
       body: JSON.stringify(data),
       headers: new Headers({
