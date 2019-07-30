@@ -30,14 +30,14 @@ class ImageText extends Component {
 
     return (
       <Waypoint onEnter={this._handleEnter.bind(this)} onLeave={this._handleLeave.bind(this)} bottomOffset='100px'>
-        <div className={`${rootClassnames} ${themeClass}`} data-animate={this.state.animate}>
+        <div className={`${rootClassnames} ${themeClass} ${reverseClass}`} data-animate={this.state.animate}>
           {this.props.floatingText &&
             <div className={`${ns}__floating-text`} data-floating-text={this.props.floatingText}>
               {this.props.floatingText}
             </div>
           }
           <div className="container">
-            <div className={`${ns}__wrapper ${reverseClass}`}>
+            <div className={`${ns}__wrapper`}>
               <div className={`${ns}__item ${ns}__image`}>
                 <img src={this.props.image.imageSrc} alt={this.props.image.imageAlt} />
               </div>

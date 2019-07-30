@@ -24,7 +24,7 @@ class App extends Component {
             <Route 
               path="/test" 
               exact 
-              render={(props)=><Test {...props}rsvp={this.state.rsvp}/>} />
+              render={(props)=><Test {...props} rsvp={this.state.rsvp}/>} />
             <Route component={NoMatch}/>
           </Switch>
           <div style={{height: '10px',backgroundColor: '#5D6750'}}></div>

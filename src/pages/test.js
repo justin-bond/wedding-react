@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Hero from '../components/Hero'
+import ImageText from '../components/ImageText'
 import Rsvp from '../components/Rsvp'
 
 const Test = (props) => {
@@ -13,7 +15,30 @@ const Test = (props) => {
 
   return (
     <div className={rootClassnames}>
-      Hello!
+      <Hero />
+      <ImageText
+        theme='venue'
+        animateIn='true'
+        reverse='true'
+        image={{
+          imageSrc: '/assets/images/aj_wedding_image_2.jpg',
+          imageAlt: 'us2'
+        }}
+        title='Venue by Three Petals'
+        content='Unfortunately, we aren’t affiliated with Airbnb. It would be nice though. Email us, Airbnb (wink).'
+        floatingText='Venue'
+      />
+      <ImageText
+        theme='venue'
+        animateIn='true'
+        image={{
+          imageSrc: '/assets/images/aj_wedding_image_2.jpg',
+          imageAlt: 'us2'
+        }}
+        title='Airbnb'
+        content='Unfortunately, we aren’t affiliated with Airbnb. It would be nice though. Email us, Airbnb (wink).'
+        floatingText='Stay'
+      />
       {
         rsvp &&
         <Rsvp />

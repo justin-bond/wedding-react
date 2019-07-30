@@ -1,0 +1,9 @@
+// -- Page -- //
+
+$ns: '.page';
+
+#{$ns} {
+  @include media($desktop-up) {
+    margin-top: 80px;
+  }
+}

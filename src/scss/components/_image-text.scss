@@ -10,11 +10,27 @@ $ns: '.image-text-component';
     margin: 200px 0;
   }
 
+  &.reverse {
+    #{$ns}__floating-text {
+      @include media($tablet-up) {
+        left: 45%;
+        text-align: left;
+      }
+    }
+
+    #{$ns}__image {
+      @include media($tablet-up) {
+        order: 1;
+      }
+    }
+  }
+
   &__floating-text {
     display: none;
     position: absolute;
     top: -57%;
-    left: 45%;
+    left: 55%;
+    text-align: right;
     transform: translate(-50%, 50%);
     font-size: 120px;
     letter-spacing: 9.17px;
@@ -44,14 +60,6 @@ $ns: '.image-text-component';
 
     @include media($tablet-up) {
       display: flex;
-    }
-
-    &.reverse {
-      #{$ns}__image {
-        @include media($tablet-up) {
-          order: 1;
-        }
-      }
     }
   }
 
