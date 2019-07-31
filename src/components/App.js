@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 import Home from '../pages/home'
-import Test from '../pages/test'
+import Details from '../pages/details'
 import NoMatch from '../pages/no-match'
 
 import Header from './header'
@@ -22,9 +22,9 @@ class App extends Component {
               exact 
               render={(props)=><Home {...props} rsvp={this.state.rsvp}/>} />
             <Route 
-              path="/test" 
+              path="/details" 
               exact 
-              render={(props)=><Test {...props} rsvp={this.state.rsvp}/>} />
+              render={(props)=><Details {...props} />} />
             <Route component={NoMatch}/>
           </Switch>
           <div style={{height: '10px',backgroundColor: '#5D6750'}}></div>

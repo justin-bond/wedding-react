@@ -8,4 +8,15 @@ $ns: '.hero-component';
     max-width: 1400px;
     margin: 0 auto;
   }
+
+  &__image {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+
+    &[data-hero-animate="true"] {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }

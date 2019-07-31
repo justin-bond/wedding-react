@@ -1,0 +1,89 @@
+// -- Text 2Up -- //
+
+$ns: '.text-2up-component';
+
+#{$ns} {
+  margin: 60px 0;
+
+  @include media($tablet-up) {
+    margin: 120px 0;
+  }
+
+  .container {
+    max-width: 1256px;
+  }
+
+  &__item {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 65px;
+      
+      @include media($tablet-up) {
+        margin-bottom: 0;
+      }
+    }
+
+    &--eyebrow {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 1px;
+      color: $olive;
+    }
+
+    &--text {
+      font-family: $playfair;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 35px;
+      white-space: pre-line;
+    }
+  }
+
+  &.registry {
+    position: relative;
+    margin: 30px 0 120px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -360px;
+      height: 545px;
+      right: 0;
+      background-color: #FFF3E4;
+    }
+
+    @include media($tablet-up) {
+      margin: 60px 0 200px;
+    }
+
+    .container {
+      max-width: 1056px;
+    }
+
+    #{$ns} {
+      &__item {
+        text-align: left;
+
+        &:first-child {
+          margin-bottom: 30px;
+          
+          @include media($tablet-up) {
+            margin-bottom: 60px;
+          }
+        }
+
+        &:last-child {
+          #{$ns}__item--text {
+            font-weight: 400;
+            font-family: $lato;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
