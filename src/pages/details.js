@@ -26,17 +26,6 @@ const Test = (props) => {
         content='Unfortunately, we aren’t affiliated with Airbnb. It would be nice though. Email us, Airbnb (wink).'
         floatingText='Venue'
       />
-      <ImageText
-        theme='venue'
-        animateIn='true'
-        image={{
-          imageSrc: '/assets/images/aj_wedding_image_2.jpg',
-          imageAlt: 'us2'
-        }}
-        title='Airbnb'
-        content='Unfortunately, we aren’t affiliated with Airbnb. It would be nice though. Email us, Airbnb (wink).'
-        floatingText='Stay'
-      />
       <Image2Up
         theme='venue'
         animateIn='true'

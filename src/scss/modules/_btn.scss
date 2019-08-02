@@ -29,21 +29,24 @@
 }
 
 .btn--primary {
+  border-color: $burnt-orange;
+  
   &:after {
     background-color: $white;
   }
 }
 
 .btn--primary-white {
-  background-color: $white;
-  color: $olive;
+  background-color: transparent;
+  border-color: $cream;
+  color: $cream;
 
   &:hover,
   &:focus {
-    color: $white;
+    color: $burnt-orange;
   }
 
   &:after {
-    background-color: $olive;
+    background-color: $cream;
   }
 }

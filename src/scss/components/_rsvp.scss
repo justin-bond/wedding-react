@@ -13,7 +13,7 @@ $ns: '.rsvp-component';
   label {
     font-size: 14px;
     font-weight: 200;
-    color: $olive;
+    color: $brown;
     text-transform: uppercase;
     margin-bottom: 10px;
   }
@@ -98,7 +98,7 @@ $ns: '.rsvp-component';
       font-family: $playfair;
       font-weight: bold;
       text-align: center;
-      color: $olive;
+      color: $burnt-orange;
 
       @include media($desktop-up) {
         position: absolute;
@@ -129,6 +129,10 @@ $ns: '.rsvp-component';
         left: 20px;
         transform: unset;
         opacity: 1;
+      }
+
+      svg path {
+        fill: #F6EDEA;
       }
     }
   }

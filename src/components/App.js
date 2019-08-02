@@ -5,7 +5,7 @@ import Home from '../pages/home'
 import Details from '../pages/details'
 import NoMatch from '../pages/no-match'
 
-import Header from './header'
+import Header from './Header'
 
 class App extends Component {
   state = {

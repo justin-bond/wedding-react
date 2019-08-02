@@ -1,6 +1,7 @@
 import React from 'react'
 
 import HeroHome from '../components/HeroHome'
+import Hero from '../components/Hero'
 import Text3Up from '../components/Text3Up'
 import ImageText from '../components/ImageText'
 import TextBlock from '../components/TextBlock'
@@ -17,7 +18,11 @@ const Home = (props) => {
 
   return (
     <div className={rootClassnames}>
-      <HeroHome rsvp={rsvp}/>
+      {
+        false &&
+        <HeroHome rsvp={rsvp}/>
+      }
+      <Hero rsvp={rsvp}/>
       <Text3Up 
         id='www'
         animateIn='true'
