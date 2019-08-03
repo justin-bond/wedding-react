@@ -35,7 +35,7 @@ class Image2Up extends Component {
               {this.props.items.map((item, index) => {
                 return (
                   <div className={`${ns}__item`} key={index}>
-                    <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
                       <div className={`${ns}__image`}>
                         <img src={item.imageSrc} alt={item.imageAlt} />
                       </div>

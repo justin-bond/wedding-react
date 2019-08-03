@@ -4,13 +4,21 @@ $ns: '.hero-component';
 
 #{$ns} {
   background-color: $burnt-orange;
+  position: relative;
+  overflow: hidden;
+
   &__wrapper {
     position: relative;
+    width: 90%;
+    max-width: 1056px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 
     @include media($desktop-up) {
+      height: auto;
       padding: 170px 0;
-      display: flex;
-      align-items: center;
       justify-content: center;
     }
   }
@@ -19,19 +27,9 @@ $ns: '.hero-component';
     z-index: 1;
     transition: opacity 0.5s ease-in-out;
     opacity: 0;
-    
-    // @include media($desktop-down) {
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    // }
 
     @include media($desktop-up) {
-      // flex-grow: 1;
-      width: 50%;
-      max-width: 700px;
-      // display: flex;
-      // justify-content: center;
+      width: 38%;
       visibility: hidden;
     }
 
@@ -47,12 +45,8 @@ $ns: '.hero-component';
     letter-spacing: 2px;
     font-family: $playfair;
     font-weight: bold;
-    color: $white;
-
-    @include media($desktop-up) {
-      color: $cream;
-      margin-bottom: 30px;
-    }
+    color: $cream;
+    margin-bottom: 30px;
 
     @include media($lg-desktop-up) {
       font-size: 90px;
@@ -65,6 +59,12 @@ $ns: '.hero-component';
     font-weight: bold;
     margin-bottom: 40px;
     letter-spacing: 2px;
+    width: 65%;
+    line-height: 26px;
+
+    @include media($desktop-up) {
+      width: 100%;
+    }
   }
 
   &__button {
@@ -78,10 +78,11 @@ $ns: '.hero-component';
     visibility: hidden;
     transform: translate(50%, 0%);
     line-height: 0;
+    display: none;
 
     @include media($desktop-up) {
-      max-width: 700px;
-      width: 50%;
+      display: block;
+      width: 62%;
 
       &:hover {
         .hero-component__image--text {
@@ -198,6 +199,46 @@ $ns: '.hero-component';
 
       path {
         fill: $cream;
+      }
+    }
+  }
+
+  &__floating-image {
+    position: absolute;
+    left: -90px;
+    bottom: -15px;
+
+    @include media($desktop-up) {
+      left: -40px;
+      bottom: -95px;
+    }
+  }
+
+  &.home {
+    #{$ns} {
+      &__floating-image {
+        svg {
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+
+  &.details {
+    background-color: #FFFAF3;
+    
+    #{$ns} {
+      &__title,
+      &__description {
+        color: $burnt-orange;
+      }
+
+      &__floating-image {
+        svg {
+          path {
+            fill: $cream !important;
+          }
+        }
       }
     }
   }

@@ -6,24 +6,41 @@ import Image2Up from '../components/Image2Up'
 import TextBlock from '../components/TextBlock'
 import Text2Up from '../components/Text2Up'
 
-const Test = (props) => {
+const Details = (props) => {
   const nsBase = 'page'
-  const ns = `test-${nsBase}`
+  const ns = `details-${nsBase}`
   const rootClassnames = `${nsBase} ${ns}`
 
   return (
     <div className={rootClassnames}>
-      <Hero />
+      <Hero 
+        theme="details"
+        title="the <br />details"
+        description="FOR THE CURIOUS"
+        image={{
+          imageSrc: '/assets/images/aj_wedding_image_hero_details.jpg',
+          imageAlt: 'Aileen & Justin'
+        }}
+        imageCred={{
+          link: 'http://Klifproductions.com/',
+          text: 'KEILI FERNANDO'
+        }}
+        floatingImage={true}
+      />
       <ImageText
         theme='venue'
         animateIn='true'
         reverse='true'
         image={{
-          imageSrc: '/assets/images/aj_wedding_image_2.jpg',
+          imageSrc: '/assets/images/details_venue.jpg',
           imageAlt: 'us2'
         }}
         title='Venue by Three Petals'
-        content='Unfortunately, we aren’t affiliated with Airbnb. It would be nice though. Email us, Airbnb (wink).'
+        content='Our venue is located in beautiful Huntington Beach California.'
+        button={{
+          link: 'https://www.google.com/maps/dir//the+venue+by+three+petals/" target="_blank',
+          text: 'GET ME THERE'
+        }}
         floatingText='Venue'
       />
       <Image2Up
@@ -31,14 +48,16 @@ const Test = (props) => {
         animateIn='true'
         items={[
           {
-            imageSrc: '/assets/images/aj_wedding_image_2.jpg',
-            imageAlt: 'us2',
-            title: 'Honeymoon <br />Fund'
+            imageSrc: '/assets/images/details_registry_honeymoon.jpg',
+            imageAlt: 'registry-honeymoon',
+            title: 'Honeymoon <br />Fund',
+            link: 'https://www.travelersjoy.com/justinandaileen'
           },
           {
-            imageSrc: '/assets/images/aj_wedding_image_2.jpg',
-            imageAlt: 'us2',
-            title: 'Registry'
+            imageSrc: '/assets/images/details_registry_cratebarrel.jpg',
+            imageAlt: 'registry-crate-barrel',
+            title: 'Registry',
+            link: 'https://www.crateandbarrel.com/gift-registry/aileen-almazora-and-justin-bond/r6017404'
           }
         ]}
       />
@@ -63,4 +82,4 @@ const Test = (props) => {
   )
 }
 
-export default Test
+export default Details

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const Test = () => {
   const nsBase = 'component'
-  const ns = `hero-${nsBase}`
+  const ns = `header-${nsBase}`
   const rootClassnames = `${nsBase} ${ns}`
   
   return (

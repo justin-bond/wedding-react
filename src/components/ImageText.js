@@ -53,6 +53,15 @@ class ImageText extends Component {
                       {this.props.content}
                     </div>
                   }
+                  {this.props.button &&
+                    <div className={`${ns}__item--button`}>
+                      <a href={this.props.button.link} target="_blank" rel="noopener noreferrer">
+                        <button className="btn btn--primary">
+                          {this.props.button.text}
+                        </button>
+                      </a>
+                    </div>
+                  }
                 </div>
               </div>
             </div>

@@ -22,7 +22,21 @@ const Home = (props) => {
         false &&
         <HeroHome rsvp={rsvp}/>
       }
-      <Hero rsvp={rsvp}/>
+      <Hero 
+        theme="home"
+        rsvp={rsvp}
+        title="aileen <br />& justin"
+        description="NOVEMBER THIRD, TWENTY NINETEEN"
+        image={{
+          imageSrc: '/assets/images/aj_wedding_image_hero.jpg',
+          imageAlt: 'Aileen & Justin'
+        }}
+        imageCred={{
+          link: 'http://Klifproductions.com/',
+          text: 'KEILI FERNANDO'
+        }}
+        floatingImage={true}
+      />
       <Text3Up 
         id='www'
         animateIn='true'

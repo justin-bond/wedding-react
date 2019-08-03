@@ -27,7 +27,7 @@ class App extends Component {
               render={(props)=><Details {...props} />} />
             <Route component={NoMatch}/>
           </Switch>
-          <div style={{height: '10px',backgroundColor: '#5D6750'}}></div>
+          <div style={{height: '10px',backgroundColor: '#A94E30'}}></div>
         </div>
       </Router>
     )

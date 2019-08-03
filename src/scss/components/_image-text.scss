@@ -79,6 +79,10 @@ $ns: '.image-text-component';
     &--content {
       line-height: 24px;
     }
+
+    &--button {
+      margin-top: 40px;
+    }
   }
 
   &__image {
