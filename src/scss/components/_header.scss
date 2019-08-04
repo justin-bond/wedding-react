@@ -1,0 +1,154 @@
+// -- Header -- //
+
+$ns: '.header-component';
+
+#{$ns} {
+  position: absolute;
+  z-index: 9999;
+  height: 0;
+  width: 100%;
+
+  &.nav-open {
+    #{$ns} {
+      &__button {
+        color: $light-cream;
+
+        span {
+          width: 100%;
+        }
+      }
+
+      &__wrapper {
+        transform: translateX(0%);
+      }
+
+      &__link {
+        transition: all 0.5s ease-in-out;
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.6s;
+
+        &:last-child {
+          transition-delay: 0.7s;
+        }
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-family: $playfair;
+    font-weight: bold;
+    color: $cream;
+    font-size: 24px;
+    line-height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    transition: color 0.5s ease-in-out;
+
+    @include media($desktop-up) {
+      margin-left: 40px;
+      margin-top: 60px;
+    }
+
+    &.light {
+      color: $cream;
+    }
+
+    &.dark {
+      color: $burnt-orange;
+    }
+
+    span {
+      width: 0;
+      overflow: hidden;
+      transition: width 0.5s ease-in-out;
+    }
+  }
+
+  &__wrapper {
+    height: 100vh;
+    width: 100%;
+    background-color: #F0A659;
+    transform: translateX(-100%);
+    transition: transform 0.75s ease-in-out;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    overflow: hidden;
+
+    @include media($desktop-up) {
+      padding-left: 0;
+      justify-content: center;
+    }
+  }
+
+  &__links {
+    @include media($desktop-up) {
+      margin-right: 150px;
+    }
+  }
+
+  &__link {
+    font-family: $playfair;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 80px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+
+    &:not(:last-child) {
+      margin-bottom: 75px;
+    }
+
+    &:after {
+      content: '';
+      width: 0;
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      background-color: $light-cream;
+      height: 8px;
+      transition: width 0.5s ease-in-out;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+
+    a {
+      color: $light-cream;
+    }
+  }
+
+  &__floating-image {
+    position: absolute;
+    top: 25px;
+    right: -100px;
+    transform: rotate(180deg);
+    max-width: 290px;
+
+    @include media($tablet-up) {
+      right: 25px;
+    }
+
+    @include media($desktop-up) {
+      max-width: inherit;
+      top: 75px;
+    }
+
+    svg {
+      width: 100%;
+    }
+  }
+}

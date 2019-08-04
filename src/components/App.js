@@ -15,7 +15,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Header />
+          <Header 
+            test={this.props}
+          />
           <Switch>
             <Route 
               path="/" 

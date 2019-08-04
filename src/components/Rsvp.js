@@ -37,9 +37,9 @@ class Rsvp extends Component {
   }
 
   handleChange(e) {
-    const state = this.state;
-    state[e.target.name] = e.target.value;
-    this.setState(state);
+    const state = this.state
+    state[e.target.name] = e.target.value
+    this.setState(state)
   }
 
   renderCodeForm() {
@@ -62,18 +62,18 @@ class Rsvp extends Component {
   }
 
   submitCodeForm(event) {
-    event.preventDefault();
+    event.preventDefault()
 
     if (this.state.formCode.toLowerCase() === 'letsparty') {
       this.setState({
         formCodeError: '',
         hideCodeForm: true,
         hideRsvpForm: false
-      });
+      })
     } else {
       this.setState({
         formCodeError: 'Please enter a correct code'
-      });
+      })
     }
   }
 
@@ -145,7 +145,7 @@ class Rsvp extends Component {
   }
 
   submitRsvpForm(event) {
-    event.preventDefault();
+    event.preventDefault()
     
     const data = {
       formGuestName: this.state.formGuestName,
@@ -153,8 +153,8 @@ class Rsvp extends Component {
       formYesNo: this.state.formYesNo,
       formPartyNumber: this.state.formPartyNumber,
       formPartyNames: this.state.formPartyNames,
-    };
-    // console.log(data);
+    }
+    // console.log(data)
 
     fetch("https://aileen.justin-bond.com/_scripts/wedding-rsvp-end-point.php", {
       method: "POST",
@@ -170,17 +170,17 @@ class Rsvp extends Component {
     )
     .then(
       response => {
-        console.log('Success:', response);
+        console.log('Success:', response)
         if (response['status'] === 1){
           this.setState({
             formRsvpResponse: 'accepted',
             hideRsvpForm: true
-          });
+          })
         } else {
-          this.setState({formRsvpResponse: response['error']});
+          this.setState({formRsvpResponse: response['error']})
         }
       }
-    );
+    )
 
     // if (data.formYesNo === 'yes') {
     //   console.log('lets party!')

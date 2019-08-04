@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { animateScroll as scroll } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll'
 
 import { CameraSVG } from '../svgIcons'
 import { Ring } from '../svgIcons'
@@ -37,8 +37,8 @@ class Hero extends Component {
 
   scrollTo(anchor, offset) {
     if (document.getElementById(anchor) != null) {
-      const anchorPosition = document.getElementById(anchor).getBoundingClientRect();
-      scroll.scrollTo((anchorPosition.top + window.scrollY) - (offset ? offset : 0));
+      const anchorPosition = document.getElementById(anchor).getBoundingClientRect()
+      scroll.scrollTo((anchorPosition.top + window.scrollY) - (offset ? offset : 0))
     }
   }
 

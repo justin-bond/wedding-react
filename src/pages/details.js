@@ -16,7 +16,7 @@ const Details = (props) => {
       <Hero 
         theme="details"
         title="the <br />details"
-        description="FOR THE CURIOUS"
+        description="IF YOU'RE CURIOUS"
         image={{
           imageSrc: '/assets/images/aj_wedding_image_hero_details.jpg',
           imageAlt: 'Aileen & Justin'

@@ -51,7 +51,7 @@ $ns: '.text-2up-component';
       top: -360px;
       height: 545px;
       right: 0;
-      background-color: #FFF3E4;
+      background-color: $light-cream;
     }
 
     @include media($tablet-up) {

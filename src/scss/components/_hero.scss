@@ -59,7 +59,7 @@ $ns: '.hero-component';
     font-weight: bold;
     margin-bottom: 40px;
     letter-spacing: 2px;
-    width: 65%;
+    width: 75%;
     line-height: 26px;
 
     @include media($desktop-up) {
@@ -207,10 +207,16 @@ $ns: '.hero-component';
     position: absolute;
     left: -90px;
     bottom: -15px;
+    max-width: 290px;
 
     @include media($desktop-up) {
       left: -40px;
       bottom: -95px;
+      max-width: inherit;
+    }
+
+    svg {
+      width: 100%;
     }
   }
 
