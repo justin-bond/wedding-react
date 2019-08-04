@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Waypoint } from 'react-waypoint'
+import { Link } from "react-router-dom"
 
 const nsBase = 'component'
 const ns = `text-block-${nsBase}`
@@ -34,6 +35,15 @@ class TextBlock extends Component {
             <div className="row">
               <div className={`col-xs-12 ${trailingLineClass}`}>
                 {this.props.content}
+                {this.props.button &&
+                  <div className={`${ns}__button`}>
+                    <Link to={this.props.button.link}>
+                      <button className="btn btn--primary">
+                        {this.props.button.text}
+                      </button>
+                    </Link>
+                  </div>
+                }
               </div>
             </div>
           </div>

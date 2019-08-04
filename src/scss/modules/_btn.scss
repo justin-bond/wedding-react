@@ -10,21 +10,24 @@
   border-radius: 25px;
   overflow: hidden;
 
-  &:hover,
-  &:focus {
-    &:after {
-      width: 100%;
+  @include media($desktop-up) {
+    &:hover,
+    &:focus {
+      &:after {
+        width: 100%;
+      }
     }
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
-    width: 0%;
-    z-index: -1;
-    transition: all 350ms ease 30ms;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+      width: 0%;
+      z-index: -1;
+      transition: all 350ms ease 30ms;
+    }
   }
 }
 
@@ -41,12 +44,14 @@
   border-color: $cream;
   color: $cream;
 
-  &:hover,
-  &:focus {
-    color: $burnt-orange;
-  }
+  @include media($desktop-up) {
+    &:hover,
+    &:focus {
+      color: $burnt-orange;
+    }
 
-  &:after {
-    background-color: $cream;
+    &:after {
+      background-color: $cream;
+    }
   }
 }

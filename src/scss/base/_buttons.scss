@@ -20,10 +20,12 @@ button {
   vertical-align: middle;
   white-space: nowrap;
 
-  &:hover,
-  &:focus {
-    // background-color: darken($action-color, 15%);
-    color: $burnt-orange;
+  @include media($desktop-up) {
+    &:hover,
+    &:focus {
+      // background-color: darken($action-color, 15%);
+      color: $burnt-orange;
+    }
   }
 
   &:disabled {

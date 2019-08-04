@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import Hero from '../components/Hero'
 import ImageText from '../components/ImageText'
@@ -10,6 +10,10 @@ const Details = (props) => {
   const nsBase = 'page'
   const ns = `details-${nsBase}`
   const rootClassnames = `${nsBase} ${ns}`
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className={rootClassnames}>
@@ -33,12 +37,12 @@ const Details = (props) => {
         reverse='true'
         image={{
           imageSrc: '/assets/images/details_venue.jpg',
-          imageAlt: 'us2'
+          imageAlt: 'venue'
         }}
         title='Venue by Three Petals'
         content='Our venue is located in beautiful Huntington Beach California.'
         button={{
-          link: 'https://www.google.com/maps/dir//the+venue+by+three+petals/" target="_blank',
+          link: 'https://www.google.com/maps/dir//the+venue+by+three+petals/',
           text: 'GET ME THERE'
         }}
         floatingText='Venue'
@@ -68,7 +72,7 @@ const Details = (props) => {
             text: 'Gift Registration'
           },
           {
-            text: 'We are blessed with such great people in our lives. Your precense is definitely enough. For those who wish to contribute to '
+            text: 'We are blessed with such great people in our lives. Your presence is definitely enough. For those who wish to contribute to '
           },
         ]}
        />

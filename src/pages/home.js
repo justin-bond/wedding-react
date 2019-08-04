@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import HeroHome from '../components/HeroHome'
 import Hero from '../components/Hero'
@@ -15,6 +15,10 @@ const Home = (props) => {
   const nsBase = 'page'
   const ns = `home-${nsBase}`
   const rootClassnames = `${nsBase} ${ns}`
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className={rootClassnames}>
@@ -83,8 +87,11 @@ const Home = (props) => {
       <TextBlock 
         id='stayTuned'
         animateIn='true'
-        content='Stay tuned for more details.' 
-        trailingLine='true'
+        content='Want to know more?' 
+        button={{
+          link: '/details',
+          text: 'SEE DETAILS'
+        }}
       />
     </div>
   )
