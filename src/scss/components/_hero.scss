@@ -16,7 +16,7 @@ $ns: '.hero-component';
     display: flex;
     align-items: center;
 
-    @include media($desktop-up) {
+    @include media($mobile-up) {
       height: auto;
       padding: 170px 0;
       justify-content: center;

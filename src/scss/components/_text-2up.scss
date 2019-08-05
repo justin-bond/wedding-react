@@ -48,10 +48,14 @@ $ns: '.text-2up-component';
       content: '';
       position: absolute;
       left: 0;
-      top: -360px;
+      top: -340px;
       height: 545px;
       right: 0;
       background-color: $light-cream;
+
+      @include media($tablet-up) {
+        top: -360px;
+      }
     }
 
     @include media($tablet-up) {

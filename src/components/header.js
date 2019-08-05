@@ -12,6 +12,7 @@ const Header = () => {
   const [buttonColor, setButtonColor] = useState('light')
 
   const openNav = () => {
+    document.body.style.overflow = navOpen ? 'visible' : 'hidden'
     setNavOpen(!navOpen)
   }
 

@@ -72,7 +72,7 @@ const Details = (props) => {
             text: 'Gift Registration'
           },
           {
-            text: 'We are blessed with such great people in our lives. Your presence is definitely enough. For those who wish to contribute to '
+            text: 'We are blessed with such great people in our lives. Your presence is definitely enough. For those who wish to contribute, feel free to check out our registries above. '
           },
         ]}
        />

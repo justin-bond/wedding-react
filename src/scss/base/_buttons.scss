@@ -4,10 +4,10 @@ button {
   -moz-appearance: none;
   -webkit-appearance: none;
   -webkit-font-smoothing: antialiased;
-  background-color: $action-color;
+  background-color: $white;
   border-radius: $base-border-radius;
   border: $base-border;
-  color: $white;
+  color: $action-color;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -24,7 +24,7 @@ button {
     &:hover,
     &:focus {
       // background-color: darken($action-color, 15%);
-      color: $burnt-orange;
+      color: $white;
     }
   }
 
