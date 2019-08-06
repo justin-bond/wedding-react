@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import TagManager from 'react-gtm-module'
 
 import Home from '../pages/home'
 import Details from '../pages/details'
 import NoMatch from '../pages/no-match'
 
 import Header from './Header'
+
+const tagManagerArgs = {
+    gtmId: 'GTM-WR5GWPV'
+}
+ 
+TagManager.initialize(tagManagerArgs)
 
 class App extends Component {
   state = {
