@@ -27,6 +27,7 @@ const Header = () => {
   return (
     <div className={`${rootClassnames} ${navOpen ? 'nav-open ' : ''}`}>
       <div className={`${ns}__button ${buttonColor}`} onClick={openNav}><span>{navOpen ? 'close' : ''}</span>&nbsp;menu</div>
+      <div class={`${ns}__background`} />
       <div className={`${ns}__wrapper`}>
         <div className={`${ns}__links`}>
           <div className={`${ns}__link`} onClick={openNav}>
