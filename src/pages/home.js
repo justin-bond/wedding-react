@@ -51,7 +51,7 @@ const Home = (props) => {
           },
           {
             eyebrow: 'WHERE',
-            text: 'VENUE by\n Three Petals in Irvine, CA'
+            text: 'VENUE by \nThree Petals \nin Huntington Beach, CA'
           },
           {
             eyebrow: 'WHEN',
